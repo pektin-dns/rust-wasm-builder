@@ -12,6 +12,7 @@ mirror:
     - git config --global user.email "runner@${CI_SERVER_HOST}"
     - git config --global user.name "runner"
     - git remote remove origin
+    - git commit --allow-empty -m "[skip ci]"
     - git remote add origin https://${USERNAME}:${GITHUB_TOKEN}@github.com/pektin-dns/${CI_PROJECT_NAME}.git
     - git push --set-upstream origin HEAD:refs/heads/main -f || true
     #gitlab
